@@ -71,7 +71,7 @@ process was highly inefficient, repetitive, and prone to human error.
 
 ### Project Overview
 * **Project Title:** Cross-Domain Identity Migration & Hybrid Microsoft 365 Integration
-* **Role:* Tier 2 / Infrastructure Support Specialist
+* **Role:** Tier 2 / Infrastructure Support Specialist
 * **Environment:** Active Directory Domain Services (AD DS), Azure AD Connect, Microsoft 365, ForensiT Transwiz, Duo Security, Group Policy (GPO)
 * **Scope:** Migrating corporate identities, local workstation profiles, and remote desktop user profiles from a legacy acquired domain to a centralized parent domain, while preserving cloud-hosted email access and data integrity.
 
