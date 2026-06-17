@@ -13,9 +13,9 @@ As an IT Support and Infrastructure Specialist, my approach to technology center
 This portfolio details real-world, enterprise-level projects designed and executed to modernize infrastructure and solve complex operational bottlenecks. Rather than just managing systems, I focus on engineering proactive solutions that reduce support ticket volumes and scale efficiently with organizational growth.
 
 ### Core Areas of Expertise Demonstrated in this Portfolio:
-* **Cloud Identity & Device Management:** Setting up and managing company devices remotely using Microsoft Intune and moving physical computers fully into cloud-managed environments (Microsoft Entra ID).
-* **User & Identity Migrations:** Moving user profiles and data seamlessly during company mergers, linking local corporate accounts safely to cloud systems, and ensuring employees don't lose their desktop settings or data.
 * **Workflow Automation:** Building smart, cloud-based workflows (using tools like Power Automate and SharePoint) that connect different business apps and eliminate hours of repetitive manual data entry.
+* **User & Identity Migrations:** Moving user profiles and data seamlessly during company mergers, linking local corporate accounts safely to cloud systems, and ensuring employees don't lose their desktop settings or data.
+* **Cloud Identity & Device Management:** Setting up and managing company devices remotely using Microsoft Intune and moving physical computers fully into cloud-managed environments (Microsoft Entra ID).
 * **Network & Wireless Optimization:** Fixing deep-rooted network lag and connectivity issues, updating corporate firewall security rules, and fine-tuning multi-floor office Wi-Fi networks for maximum speed and stability.
 
 ---
@@ -124,7 +124,6 @@ To minimize post-migration ticket volumes, user desktop environments were progra
 2. **Endpoint Machine Migration:** Deployed Transwiz to local workstations to back up user profiles. Executed the built-in domain join functionality within the wizard to simultaneously bind the physical workstation to the new target domain and map the restored profile to the new domain credentials.
 
 #### Phase 3: Network Environment & Security Posture Finalization
-
 1. **Group Policy & Drive Mapping:** Provisioned migrated users into target security groups (e.g., login script and drive-mapping groups) to automate network resource delivery.
 2. **Legacy Resource Cleanup:** Flushed stale environment mappings on client machines using `net use * /delete` and migrated legacy user shares to the centralized file server infrastructure.
 3. **MFA & Compliance Realignment:** Re-synchronized and provisioned user hardware tokens/mobile devices within the Duo Security console. Decrypted legacy volumes and cycled BitLocker drive encryption to escrow fresh recovery keys into the new target domain's Active Directory Organizational Units (OUs).
@@ -134,29 +133,24 @@ To minimize post-migration ticket volumes, user desktop environments were progra
 * **Seamless User Experience:** Maintained a familiar desktop environment for end-users across both physical workstations and virtualized RDS hosts, resulting in an exceptionally low post-migration support queue.
 * **Maintained Compliance Baseline:** Ensured that MFA protections and BitLocker drive encryption standards remained continuously enforced throughout the domain transition lifecycle.
 
-## 2. Technical Project Case Study: Legacy AD to
-## Microsoft Entra ID Cloud Endpoint Transformation
+## 2. Technical Project Case Study: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation
 
 ### Project Overview
-
 * **Project Title:** Legacy Active Directory to Microsoft Entra ID Cloud Endpoint Transformation
 * **Role:** Tier 2 / Infrastructure & Support Specialist
 * **Environment:** Microsoft Entra ID, Microsoft Intune (MDM), ForensiT Profwiz, Windows 10/11, PowerShell, Endpoint Security
 * **Scope:** Decommissioning legacy on-premises domain dependencies and migrating 60+ physical corporate endpoints into a modern, cloud-native identity framework managed entirely via MDM profiles.
 
 ### The Challenge (Situation)
-
 The organization sought to modernize its device management strategy by eliminating reliance on an aging on-premises domain infrastructure. Endpoints needed to be transitioned to a cloud-native workplace framework using Microsoft Entra ID and Intune. The core operational challenge was executing this migration seamlessly on live production machines, preserving local user profiles, data, and application states, while engineering a comprehensive suite of cloud-delivered app deployments, configuration policies, and zero-trust compliance baselines to replace legacy Group Policies (GPOs).
 
 ### Core Technical Toolkit
-
 * **Cloud Identity & MDM:** Microsoft Entra ID Admin Center, Microsoft Intune
 * **Authentication Systems:** Temporary Access Passwords (TAP), Multi-Factor Authentication (MFA) bypass protocols
 * **Profile Migration Utilities:** ForensiT User Profile Wizard (Profwiz)
 * **Endpoint Architecture Modules:** Intune Win32 App Packaging, Device Configuration Profiles, Device Compliance Policies
 
 ### Step-by-Step Execution (Action)
-
 #### Phase 1: Pre-Migration Data Scoping & Identity Provisioning
 To minimize the impact of moving from a local domain account to a cloud identity, exhaustive pre-flight configurations were run on each endpoint.
 
@@ -165,14 +159,12 @@ To minimize the impact of moving from a local domain account to a cloud identity
 3. **Authentication Bypass Staging:** Generated time-limited, 60-minute Temporary Access Passwords (TAP) for users within the Entra ID portal. This allowed technical enrollment to proceed efficiently without requiring the user's explicit interactive MFA prompts during device configuration.
 
 #### Phase 2: Domain Disconnection and Cloud Entra ID Joining
-
 1. **On-Premises Severance:** Logged into endpoints via an isolated local administrator account and completely disconnected the machine from the legacy on-premises Active Directory network.
 2. **Cloud Identity Binding:** Following a system reboot, navigated to the modern workplace enrollment terminal and selected _Join this device to Azure Active Directory_. Bound the hardware directly to the user's cloud corporate identity using the pre-staged TAP token.
 3. **Resolution of Provisioning Blockers:** Remediated enrollment anomalies (such as MDM Error Code 8018000a, indicating a device pre-existing enrollment conflict) by running targeted cleanup scripts via PowerShell to purge stale hardware registrations.
 4. **Profile Realignment:** Leveraged the ForensiT User Profile Wizard to programmatically map and merge the legacy local domain user profile path directly into the newly generated cloud-native Entra ID user space, preserving all app settings, backgrounds, and personalizations.
 
 #### Phase 3: Intune Policy Infrastructure & App Deployment
-
 To establish parity with (and exceed) legacy on-premises structures, an enterprise-grade ecosystem of device configurations, compliance filters, and applications was built out from scratch in Microsoft Intune:
 * **App Lifecycle & Deployment Management:** Packaged and targeted core software configurations to silently install upon Entra enrollment. This included foundational productivity tools (Microsoft 365 Apps for Enterprise, Microsoft Teams, Outlook Classic, Adobe Acrobat Reader DC), secure connectivity agents (WatchGuard Agent, WatchGuard Mobile VPN with SSL), device administration helpers (Company Portal), hardware utilities (Dymo Label Software), and print infrastructure objects (Ricoh Downstairs and Upstairs network printers).
 * **Device Configuration Profiles:** Engineered and applied automated workspace settings, including _Silently Sign In OneDrive_ , _Enable Auto Update for Google Chrome_ , _Google
@@ -181,17 +173,11 @@ Chrome SSO_ , _Default homepage_ , _Bookmarks_ , and _Teams auto start_.
 * **Device Compliance Baselines:** Designed conditional access safety nets across platforms. Constructed the BitLocker policy to mandate full-volume drive encryption on Windows endpoints, the Minimun OS Version rule to block unpatched devices from accessing cloud repositories, and targeted mobile guardrails ( Compliance policy for Android and Compliance for iOS ).
 
 ### Project Results (Impact)
-
 * **Successful Cloud Transformation:** Transitioned 60+ legacy network-bound physical workstations into fully autonomous, cloud-managed modern workplace devices with zero data loss.
 * **Automated Zero-Touch Provisioning Baseline:** Verified that new hardware assets could now be spun up directly out-of-the-box using purely Entra ID login credentials, cutting historical technician hands-on configuration times drastically.
 * **Enforced Least Privilege & Hardened Compliance:** Closed major security vulnerabilities by enforcing localized non-admin privileges globally, mandating BitLocker encryption escrow, and automating application delivery via Intune.
 
-
-## 4. Technical Project Case Study: Multi-Floor
-
-## Enterprise Wireless Network Optimization &
-
-## Advanced Remediation
+## 4. Technical Project Case Study: Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation
 
 ### Project Overview
 
