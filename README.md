@@ -6,7 +6,7 @@ froemming@gmail.com
 
 ---
 
-## 🎯 Professional Portfolio Summary
+## 🎯 Summary
 
 As an IT Support and Infrastructure Specialist, my approach to technology centers on three core principles: **eliminating operational waste through automation**, **hardening security perimeters via zero-trust baselines**, and **architecting seamless cloud migrations** that ensure business continuity. 
 
@@ -51,19 +51,15 @@ process was highly inefficient, repetitive, and prone to human error.
 ### Step-by-Step Execution (Action)
 
 #### Phase 1: Conceptual Design & Database Staging
-
 1. **Centralized Schema Architecture:** Developed a unified data repository within Microsoft Lists to replace fragmented legacy trackers. Structured columns to categorize clients, backup software types (e.g., Veeam, Datto, Cloudberry), execution schedules, operational health statuses, and dynamic fields for ticketing system mapping.
-
 2. **Technician Allocation Automation:** Configured an automated morning routine that polls team calendars to dynamically identify scheduled support shifts and systematically assign daily regional inspection oversight to specific available technicians.
 
 #### Phase 2: Power Automate Scripting & Log Parsing
-
 1. **Mailbox Ingestion Flow:** Built a background automation trigger within Power Automate to scan the inbound shared backup mailbox every morning.
 2. **String Parsing Logic:** Configured parsing parameters to extract plain-text contents from hundreds of incoming device alerts, automatically mapping device names and execution statuses (e.g., Success, Warning, Failed) straight into corresponding database records.
 3. **UI Centralization:** Consolidated all individual email data into a single, real-time, easy-to-read dashboard, eliminating the need for technicians to hunt through raw mailbox folders.
 
 #### Phase 3: Automated Incident Management Loop
-
 1. **Toggle-Triggered Ticket Generation:** Integrated custom interactive elements directly inside the Microsoft List interface. Enforced a logic flow where if a backup fails, a technician simply flips a "Create a Ticket" toggle switch.
 2. **API Payload Execution:** Programmed a secondary Power Automate flow that listens for that toggle update. It compiles the exact error payload—extracting the faulty device details and structural body text from the original log email—and shoots an automated API email directly to the Zendesk processing endpoint.
 3. **Dynamic Webhook Confirmation:** Configured the automated loop to listen for Zendesk's creation receipt. The moment Zendesk logs the ticket, the flow writes the exact numeric incident ticket ID right back into the active database record automatically, facilitating immediate follow-up capabilities for the team.
@@ -73,12 +69,10 @@ process was highly inefficient, repetitive, and prone to human error.
 * **Drastic Acceleration in MTTR (Mean Time to Resolution):** Reduced ticket generation timelines from minutes of manual copy-pasting down to a single-click toggle, allowing high-priority backup failures to hit remediation pipelines instantly.
 * **Elimination of Human Error:** Standardized data entry by ensuring no failed backup jobs are accidentally skipped or missed in full email folders, safeguarding client business continuity and strict SLA compliance.
 
-
-
+---
 ## 2. Technical Project Case Study: Domain Merger & Hybrid Identity Migration
 
 ### Project Overview
-
 * **Project Title:** Cross-Domain Identity Migration & Hybrid Microsoft 365 Integration
 * **Role:* Tier 2 / Infrastructure Support Specialist
 * **Environment:** Active Directory Domain Services (AD DS), Azure AD Connect, Microsoft 365, ForensiT Transwiz, Duo Security, Group Policy (GPO)
@@ -86,24 +80,19 @@ process was highly inefficient, repetitive, and prone to human error.
 
 ### The Challenge (Situation)
 Following an organizational merger, users and assets on a legacy source domain needed to be consolidated into a centralized parent firm domain ("FIRM.LOCAL"). The primary technical challenges were:
-
 1. **Identity Matching:** Moving users to the new domain without destroying or duplicating their existing Microsoft 365 cloud mailboxes and licenses.
 2. **Profile Continuity:** Ensuring users did not lose local data, browser settings, or application configurations on their local workstations and Remote Desktop Services (RDS) environments.
 3. **Security Baseline Preservation:** Maintaining Multi-Factor Authentication (MFA) via Duo (Complete Identity Security & MFA Solutions) and re-establishing BitLocker drive encryption under the new domain structure.
 
 ### Core Technical Toolkit
-
 * **Directory Synchronization:** Azure AD Connect (Start-ADSyncSyncCycle)
 * **Cloud Identity Management:** PowerShell MSOnline Module (Connect-MsolService, Set-MsolUser)
 * **Profile Migration Utilities:** ForensiT Transwiz Deployment Wizard
 * **Security & Authentication:** Duo Security Console, Windows BitLocker Drive Encryption
 
 ### Step-by-Step Execution (Action)
-
 #### Phase 1: Hybrid Cloud Identity Hard-Matching
-
 To prevent cloud mailbox duplication, a manual cryptographic hard-match was executed to bridge the new on-premises Active Directory accounts with existing Microsoft 365 objects.
-
 1. **Cloud Disconnection:** Isolated the source user objects from Azure AD Connect sync to temporarily convert them to cloud-only objects, ensuring the accounts remained intact for restoration.
 2. **ImmutableID Injection:** Created the corresponding new user objects in the target firm domain. Used PowerShell to extract the new on-premises GUID, converted it to a Base64 string, and mapped it directly to the cloud user's ImmutableId attribute:
    ```
@@ -113,13 +102,10 @@ To prevent cloud mailbox duplication, a manual cryptographic hard-match was exec
     $immutableID = [system.convert]::ToBase64String($guid.tobytearray())
     Set-MsolUser -UserPrincipalName $365User -ImmutableId $immutableID
    ```
-4. **Directory Re-Synchronization:** Forced sequential delta sync cycles via Azure AD
-    Connect to finalize the hard-match, seamlessly binding the new local AD account to the
-    existing cloud mailbox.
+4. **Directory Re-Synchronization:** Forced sequential delta sync cycles via Azure AD Connect to finalize the hard-match, seamlessly binding the new local AD account to the existing cloud mailbox.
 
 #### Phase 2: Remote Desktop (RDS) & Local Profile Migration
 To minimize post-migration ticket volumes, user desktop environments were programmatically migrated to prevent data loss.
-
 1. **RDS Server Profiles** Utilized ForensiT Transwiz on production remote desktop servers to compress and back up user profiles to temporary local storage. Restored the data by targeting the new domain and user accounts, leveraging profile merging capabilities while intentionally holding the RDS host on its original domain until the final infrastructure cutover.
 2. **Endpoint Machine Migration:** Deployed Transwiz to local workstations to back up user profiles. Executed the built-in domain join functionality within the wizard to simultaneously bind the physical workstation to the new target domain and map the restored profile to the new domain credentials.
 
@@ -133,8 +119,8 @@ To minimize post-migration ticket volumes, user desktop environments were progra
 * **Seamless User Experience:** Maintained a familiar desktop environment for end-users across both physical workstations and virtualized RDS hosts, resulting in an exceptionally low post-migration support queue.
 * **Maintained Compliance Baseline:** Ensured that MFA protections and BitLocker drive encryption standards remained continuously enforced throughout the domain transition lifecycle.
 
-## 2. Technical Project Case Study: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation
-
+---
+## 3. Technical Project Case Study: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation
 ### Project Overview
 * **Project Title:** Legacy Active Directory to Microsoft Entra ID Cloud Endpoint Transformation
 * **Role:** Tier 2 / Infrastructure & Support Specialist
@@ -153,7 +139,6 @@ The organization sought to modernize its device management strategy by eliminati
 ### Step-by-Step Execution (Action)
 #### Phase 1: Pre-Migration Data Scoping & Identity Provisioning
 To minimize the impact of moving from a local domain account to a cloud identity, exhaustive pre-flight configurations were run on each endpoint.
-
 1. **Cloud Group Staging:** Pre-staged targeted user accounts into dedicated Intune deployment groups within the cloud console to automate downstream policy assignments.
 2. **State Protection:** Confirmed that cloud-backup sync engines (OneDrive) were fully operational, capturing the user's Desktop, Documents, and Pictures folders. Manually exported local browser components (Chrome bookmarks) and secured credential-manager tokens (1Password extension keys).
 3. **Authentication Bypass Staging:** Generated time-limited, 60-minute Temporary Access Passwords (TAP) for users within the Entra ID portal. This allowed technical enrollment to proceed efficiently without requiring the user's explicit interactive MFA prompts during device configuration.
@@ -177,10 +162,9 @@ Chrome SSO_ , _Default homepage_ , _Bookmarks_ , and _Teams auto start_.
 * **Automated Zero-Touch Provisioning Baseline:** Verified that new hardware assets could now be spun up directly out-of-the-box using purely Entra ID login credentials, cutting historical technician hands-on configuration times drastically.
 * **Enforced Least Privilege & Hardened Compliance:** Closed major security vulnerabilities by enforcing localized non-admin privileges globally, mandating BitLocker encryption escrow, and automating application delivery via Intune.
 
+---
 ## 4. Technical Project Case Study: Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation
-
 ### Project Overview
-
 * **Project Title:** High-Density Enterprise Wireless Infrastructure Stabilization & Layer 2/Re-Engineering
 * **Role:** Tier 2 / Infrastructure & Support Specialist
 * **Environment:** UniFi Wireless Architecture, HPE Legacy Switching, Enterprise Firewalls, Windows Server (DHCP/DNS), Advanced RF Diagnostic Suites
@@ -190,7 +174,6 @@ Chrome SSO_ , _Default homepage_ , _Bookmarks_ , and _Teams auto start_.
 An enterprise client was experiencing systemic, long-term wireless network unreliability, high latency, packet loss, and severe throughput drops. Multiple previous technicians had attempted to remediate the environment over several months without success. The infrastructure suffered from undocumented structural flaws across the wireless spectrum, underlying Layer 2 segmentation issues, and firewall routing ambiguities that severely degraded the user experience for both staff and guests.
 
 ### Core Technical Toolkit
-
 * **Wireless Management:** UniFi Network Controller Infrastructure
 * **Hardware Layer:** UniFi U6-Lite Access Points, HPE 1950 & 1820 Managed Switches
 * **Protocols & RF Control:** 802.11r (Fast Roaming), Minimum Data Rate Tuning, Co-Channel Interference Mitigation
@@ -218,8 +201,5 @@ The stabilization project was broken down into four distinct structural phases t
 * **Resolved a Multi-Month Network Crisis:** Successfully diagnosed and permanently resolved a chronic infrastructure failure that had eluded multiple engineering groups for months.
 * **Drastic Performance Amplification:** Eliminated packet drops, reduced latency, and normalized deterministic throughput across all floors by purging co-channel interference and optimizing airtime utilization.
 * **Hardened Security & Zero-Trust Posture:** Moved the entire corporate wireless footprint from a risky, flat broadcast domain into a highly segmented, firewall-audited VLAN structure.
-
-
-
 This is a offline tool, your data stays locally and is not send to any server!
 Feedback & Bug Reports
