@@ -73,10 +73,10 @@ process was highly inefficient, repetitive, and prone to human error.
 * **Project Title:** Cross-Domain Identity Migration & Hybrid Microsoft 365 Integration
 * **Role:* Tier 2 / Infrastructure Support Specialist
 * **Environment:** Active Directory Domain Services (AD DS), Azure AD Connect, Microsoft 365, ForensiT Transwiz, Duo Security, Group Policy (GPO)
-* **Scope:** Migrating corporate identities, local workstation profiles, and remote desktop user profiles from a legacy acquired domain to a centralized parent firm domain, while preserving cloud-hosted email access and data integrity.
+* **Scope:** Migrating corporate identities, local workstation profiles, and remote desktop user profiles from a legacy acquired domain to a centralized parent domain, while preserving cloud-hosted email access and data integrity.
 
 ### The Challenge (Situation)
-Following an organizational merger, users and assets on a legacy source domain needed to be consolidated into a centralized parent firm domain ("FIRM.LOCAL"). The primary technical challenges were:
+Following an organizational merger, users and assets on a legacy source domain needed to be consolidated into a centralized parent domain. The primary technical challenges were:
 1. **Identity Matching:** Moving users to the new domain without destroying or duplicating their existing Microsoft 365 cloud mailboxes and licenses.
 2. **Profile Continuity:** Ensuring users did not lose local data, browser settings, or application configurations on their local workstations and Remote Desktop Services (RDS) environments.
 3. **Security Baseline Preservation:** Maintaining Multi-Factor Authentication (MFA) via Duo (Complete Identity Security & MFA Solutions) and re-establishing BitLocker drive encryption under the new domain structure.
@@ -91,7 +91,7 @@ Following an organizational merger, users and assets on a legacy source domain n
 #### Phase 1: Hybrid Cloud Identity Hard-Matching
 To prevent cloud mailbox duplication, a manual cryptographic hard-match was executed to bridge the new on-premises Active Directory accounts with existing Microsoft 365 objects.
 1. **Cloud Disconnection:** Isolated the source user objects from Azure AD Connect sync to temporarily convert them to cloud-only objects, ensuring the accounts remained intact for restoration.
-2. **ImmutableID Injection:** Created the corresponding new user objects in the target firm domain. Used PowerShell to extract the new on-premises GUID, converted it to a Base64 string, and mapped it directly to the cloud user's ImmutableId attribute:
+2. **ImmutableID Injection:** Created the corresponding new user objects in the target domain. Used PowerShell to extract the new on-premises GUID, converted it to a Base64 string, and mapped it directly to the cloud user's ImmutableId attribute:
    ```
     $ADUser = "TargetNewUser"
     $365User = "user@company.com"
