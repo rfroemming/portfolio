@@ -28,7 +28,7 @@ This portfolio details real-world, enterprise-level projects designed and execut
 
 ---
 
-## 1. Technical Project Case Study: Automated Backup Monitoring & Incident Response Portal
+## 1. Automated Backup Monitoring & Incident Response Portal
 
 ### Project Overview
 * **Project Title:** Cloud-Driven Automation & Centralized Backup Monitoring System
@@ -70,7 +70,7 @@ process was highly inefficient, repetitive, and prone to human error.
 * **Elimination of Human Error:** Standardized data entry by ensuring no failed backup jobs are accidentally skipped or missed in full email folders, safeguarding client business continuity and strict SLA compliance.
 
 ---
-## 2. Technical Project Case Study: Domain Merger & Hybrid Identity Migration
+## 2. Domain Merger & Hybrid Identity Migration
 
 ### Project Overview
 * **Project Title:** Cross-Domain Identity Migration & Hybrid Microsoft 365 Integration
@@ -120,7 +120,7 @@ To minimize post-migration ticket volumes, user desktop environments were progra
 * **Maintained Compliance Baseline:** Ensured that MFA protections and BitLocker drive encryption standards remained continuously enforced throughout the domain transition lifecycle.
 
 ---
-## 3. Technical Project Case Study: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation
+## 3. Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation
 ### Project Overview
 * **Project Title:** Legacy Active Directory to Microsoft Entra ID Cloud Endpoint Transformation
 * **Role:** Tier 2 / Infrastructure & Support Specialist
@@ -163,7 +163,7 @@ Chrome SSO_ , _Default homepage_ , _Bookmarks_ , and _Teams auto start_.
 * **Enforced Least Privilege & Hardened Compliance:** Closed major security vulnerabilities by enforcing localized non-admin privileges globally, mandating BitLocker encryption escrow, and automating application delivery via Intune.
 
 ---
-## 4. Technical Project Case Study: Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation
+## 4. Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation
 ### Project Overview
 * **Project Title:** High-Density Enterprise Wireless Infrastructure Stabilization & Layer 2/Re-Engineering
 * **Role:** Tier 2 / Infrastructure & Support Specialist
