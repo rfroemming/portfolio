@@ -2,14 +2,11 @@
 ## Enterprise Infrastructure, Cloud Architecture, & Process Automation
 
 Regis Froemming  
-froemming@gmail.com  
 
 ---
 
 ## 🎯 Summary
-
 As an IT Support and Infrastructure Specialist, my approach to technology centers on three core principles: **eliminating operational waste through automation**, **hardening security perimeters via zero-trust baselines**, and **architecting seamless cloud migrations** that ensure business continuity. 
-
 This portfolio details real-world, enterprise-level projects designed and executed to modernize infrastructure and solve complex operational bottlenecks. Rather than just managing systems, I focus on engineering proactive solutions that reduce support ticket volumes and scale efficiently with organizational growth.
 
 ### Core Areas of Expertise Demonstrated in this Portfolio:
