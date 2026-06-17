@@ -61,7 +61,7 @@ process was highly inefficient, repetitive, and prone to human error.
 
 #### Phase 3: Automated Incident Management Loop
 1. **Toggle-Triggered Ticket Generation:** Integrated custom interactive elements directly inside the Microsoft List interface. Enforced a logic flow where if a backup fails, a technician simply flips a "Create a Ticket" toggle switch.
-2. **API Payload Execution:** Programmed a secondary Power Automate flow that listens for that toggle update. It compiles the exact error payload—extracting the faulty device details and structural body text from the original log email—and shoots an automated API email directly to the Zendesk processing endpoint.
+2. **API Payload Execution:** Programmed a secondary Power Automate flow that listens for that toggle update. It compiles the exact error payload, extracting the faulty device details and structural body text from the original log email, and shoots an automated API email directly to the Zendesk processing endpoint.
 3. **Dynamic Webhook Confirmation:** Configured the automated loop to listen for Zendesk's creation receipt. The moment Zendesk logs the ticket, the flow writes the exact numeric incident ticket ID right back into the active database record automatically, facilitating immediate follow-up capabilities for the team.
 
 ### Project Results (Impact)
