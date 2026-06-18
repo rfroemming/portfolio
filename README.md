@@ -207,7 +207,7 @@ Designed a comprehensive, four-phase compliance deployment framework and strateg
 Recognizing that compliance requires cross-functional alignment, I took the initiative to scale a standard 20-hour introductory IT assessment into a robust, enterprise-wide project strategy. The resulting framework scopes out an estimated 160 hours of total effort required across IT, HR, and operations to bridge existing gaps and achieve certification.
 
 ### Key Contributions & Strategic Design
-* **Architecture of the Compliance Framework:** Developed a centralized, 4-phase governance and tracking workbook (CPCSC Templeate2.xlsx). The blueprint outlines a systematic path for the client's eventual execution team:
+* **Architecture of the Compliance Framework:** Developed a centralized, 4-phase governance and tracking workbook. The blueprint outlines a systematic path for the client's eventual execution team:
    * Phase 1: Identification & Current State Mapping
    * Phase 2: Gap Analysis & Findings
    * Phase 3: Remediation & Action Planning
