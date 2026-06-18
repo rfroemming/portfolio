@@ -22,6 +22,7 @@ This portfolio details real-world, enterprise-level projects designed and execut
 2. [Case Study 2: Domain Merger & Hybrid Identity Migration](#2-technical-project-case-study-domain-merger--hybrid-identity-migration)
 3. [Case Study 3: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation](#3-technical-project-case-study-legacy-ad-to-microsoft-entra-id-cloud-endpoint-transformation)
 4. [Case Study 4: Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation](#4-technical-project-case-study-multi-floor-enterprise-wireless-network-optimization--advanced-remediation)
+5. [Case Study 5: CPCSC Level 1 Compliance Strategy & Deployment Blueprint] 
 
 ---
 
@@ -198,5 +199,31 @@ The stabilization project was broken down into four distinct structural phases t
 * **Resolved a Multi-Month Network Crisis:** Successfully diagnosed and permanently resolved a chronic infrastructure failure that had eluded multiple engineering groups for months.
 * **Drastic Performance Amplification:** Eliminated packet drops, reduced latency, and normalized deterministic throughput across all floors by purging co-channel interference and optimizing airtime utilization.
 * **Hardened Security & Zero-Trust Posture:** Moved the entire corporate wireless footprint from a risky, flat broadcast domain into a highly segmented, firewall-audited VLAN structure.
-This is a offline tool, your data stays locally and is not send to any server!
-Feedback & Bug Reports
+
+---
+## 5. Project Showcase: CPCSC Level 1 Compliance Strategy & Deployment Blueprint
+### Project Overview
+Designed a comprehensive, four-phase compliance deployment framework and strategic roadmap to prepare a key client for the Canadian Program for Cyber Security Certification (CPCSC) Level 1. This certification is a critical federal prerequisite for organizations maintaining eligibility for Government of Canada contracts.
+Recognizing that compliance requires cross-functional alignment, I took the initiative to scale a standard 20-hour introductory IT assessment into a robust, enterprise-wide project strategy. The resulting framework scopes out an estimated 160 hours of total effort required across IT, HR, and operations to bridge existing gaps and achieve certification.
+
+### Key Contributions & Strategic Design
+* **Architecture of the Compliance Framework:** Developed a centralized, 4-phase governance and tracking workbook (CPCSC Templeate2.xlsx). The blueprint outlines a systematic path for the client's eventual execution team:
+   * Phase 1: Identification & Current State Mapping
+   * Phase 2: Gap Analysis & Findings
+   * Phase 3: Remediation & Action Planning
+   * Phase 4: Evidence Collection & Verification
+* **Hybrid Identity Risk Analysis:** Identified a major upcoming operational bottleneck in the client's infrastructure—two unsynced identity providers (on-premises Active Directory and cloud-based Entra ID). Integrated specific policy replication steps into the roadmap to ensure security controls are uniformly applied across both environments during implementation.
+* **Control Mapping & Scoping:** Mapped out all 51 individual federal compliance requirements across 13 core security controls (such as Account Management, Access Control, and Boundary Defense), translating dense government criteria into clear, actionable technical objectives.
+* **Stakeholder Alignment Strategy:** Structured the project plan to emphasize that compliance is not just an IT task. Formulated accountability structures to involve client leadership, HR, and operations, ensuring the project accounts for strict audit requirements without being derailed by user-onboarding friction.
+
+### Core Skills Demonstrated
+* Cybersecurity Governance
+* Compliance Framework Design
+* Strategic Project Planning
+* Risk Assessment & Scoping
+* Hybrid Identity Architecture
+* Government Contracting Standards (CPCSC)
+* Cross-Functional Strategy
+
+### Reflection Note
+The value of a compliance framework lies in eliminating ambiguity. By breaking down 51 complex federal criteria into a structured, four-phase project roadmap, I turned a daunting regulatory requirement into a highly predictable, manageable, and auditable technical deployment plan. The true challenge of CPCSC Level 1 compliance isn't just knowing the rules, it's translating them into actionable technical requirements within a hybrid identity and multi-vendor environment, ensuring the business stays fully eligible for federal contracts without compromising security integrity.
