@@ -66,6 +66,7 @@ process was highly inefficient, repetitive, and prone to human error.
 * **90%+ Reduction in Operational Waste:** Dropped the manual verification requirement from 3 hours per day of engineering time down to a brief, automated dashboard review, saving roughly 750 hours of technical labor annually.
 * **Drastic Acceleration in MTTR (Mean Time to Resolution):** Reduced ticket generation timelines from minutes of manual copy-pasting down to a single-click toggle, allowing high-priority backup failures to hit remediation pipelines instantly.
 * **Elimination of Human Error:** Standardized data entry by ensuring no failed backup jobs are accidentally skipped or missed in full email folders, safeguarding client business continuity and strict SLA compliance.
+<img width="1863" height="827" alt="backup_portal" src="https://github.com/user-attachments/assets/1c369bd7-dd92-42cd-8904-ab706c5861e4" />
 
 ---
 ## 2. Domain Merger & Hybrid Identity Migration
