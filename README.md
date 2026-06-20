@@ -18,11 +18,11 @@ This portfolio details real-world, enterprise-level projects designed and execut
 ---
 
 ## 📂 Table of Contents
-1. [Case Study 1: Automated Backup Monitoring & Incident Response Portal](#1-technical-project-case-study-automated-backup-monitoring--incident-response-portal)
-2. [Case Study 2: Domain Merger & Hybrid Identity Migration](#2-technical-project-case-study-domain-merger--hybrid-identity-migration)
-3. [Case Study 3: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation](#3-technical-project-case-study-legacy-ad-to-microsoft-entra-id-cloud-endpoint-transformation)
-4. [Case Study 4: Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation](#4-technical-project-case-study-multi-floor-enterprise-wireless-network-optimization--advanced-remediation)
-5. [Case Study 5: CPCSC Level 1 Compliance Strategy & Deployment Blueprint](#5-project-showcase-cpcsc-level-1-compliance-strategy--deployment-blueprint )
+1. [Case Study 1: Automated Backup Monitoring & Incident Response Portal](#1-automated-backup-monitoring--incident-response-portal)
+2. [Case Study 2: Domain Merger & Hybrid Identity Migration](#2-domain-merger--hybrid-identity-migration)
+3. [Case Study 3: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation](#3-legacy-ad-to-microsoft-entra-id-cloud-endpoint-transformation)
+4. [Case Study 4: Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation](#4-multi-floor-enterprise-wireless-network-optimization--advanced-remediation)
+5. [Case Study 5: CPCSC Level 1 Compliance Strategy & Deployment Blueprint](#5-project-showcase-cpcsc-level-1-compliance-strategy--deployment-blueprint)
 
 ---
 
