@@ -23,6 +23,7 @@ This portfolio details real-world, enterprise-level projects designed and execut
 3. [Case Study 3: Legacy AD to Microsoft Entra ID Cloud Endpoint Transformation](#3-legacy-ad-to-microsoft-entra-id-cloud-endpoint-transformation)
 4. [Case Study 4: Multi-Floor Enterprise Wireless Network Optimization & Advanced Remediation](#4-multi-floor-enterprise-wireless-network-optimization--advanced-remediation)
 5. [Case Study 5: CPCSC Level 1 Compliance Strategy & Deployment Blueprint](#5-project-showcase-cpcsc-level-1-compliance-strategy--deployment-blueprint)
+6. [Case Study 6: Automated Camera Infrastructure Monitoring & Geospatial Topology Mapping](#6-automated-camera-infrastructure-monitoring-&-geospatial-topology-mapping)
 
 ---
 
@@ -228,3 +229,40 @@ Recognizing that compliance requires cross-functional alignment, I took the init
 
 ### Reflection Note
 The value of a compliance framework lies in eliminating ambiguity. By breaking down 51 complex federal criteria into a structured, four-phase project roadmap, I turned a daunting regulatory requirement into a highly predictable, manageable, and auditable technical deployment plan. The true challenge of CPCSC Level 1 compliance isn't just knowing the rules, it's translating them into actionable technical requirements within a hybrid identity and multi-vendor environment, ensuring the business stays fully eligible for federal contracts without compromising security integrity.
+
+---
+## 6. Automated Camera Infrastructure Monitoring & Geospatial Topology Mapping
+###Project Overview
+- **Project Title:** Enterprise Camera Monitoring Automation & GIS Topology Portal
+- **Role:** IT Technical Support Specialist
+- **Environment:** Genetec Video Management System (VMS), Power Automate, PowerShell, Microsoft Lists, SharePoint Online, MapLibre GL JS (HTML5/CSS3/JS)
+- **Scope:** Architecting an automated pipeline to process daily VMS security camera logs, tracking outage durations, and deploying an interactive geospatial mapping interface to visualize network topology and physical assets across multi-terminal maritime facilities.
+
+###The Challenge (Situation)
+Managing the physical security camera infrastructure across multi-terminal industrial facilities presented severe operational bottlenecks. The centralized Video Management System (VMS) automatically dispatched daily email status reports covering 160+ cameras across multiple sites. However, raw logs lacked historical down-timestamps, forcing technicians to manually cross-reference daily exports against previous records—wasting hours of engineering time. Furthermore, no centralized, interactive documentation existed for physical device placement. When a camera went offline, technicians had to manually track down its physical location, identify its parent pole, determine upstream switch connectivity, and verify power routing without reliable schematics.
+
+###Core Technical Toolkit
+- **Data Ingestion & Pipeline Orchestration:** Microsoft Power Automate, Exchange Online Mailbox Triggers, File System Handshake Mechanism (`.ready` signal pattern)
+- **Data Processing & Scripting:** PowerShell Parsing Engine, Delta Comparison Logic, JSON Data Pipelines
+- **Data Repository & State Tracking:** Microsoft Lists, SharePoint Online
+- **Geospatial UI & Mapping:** MapLibre GL JS, Vector GeoJSON Layers, ArcGIS Satellite Imagery Integration
+
+###Step-by-Step Execution (Action)
+####Phase 1: Automated Ingestion & Pipeline Synchronization
+1. **Automated Ingestion Flow:** Configured Power Automate to automatically intercept the daily VMS status report email and save the raw status export to a local server processing directory.
+2. **Race-Condition Prevention (Handshake Signal Pattern):** Designed a robust file-trigger mechanism utilizing status signal flags (`.ready` extension pattern). A background PowerShell parsing engine detects the incoming report, parses device states, compiles a live snapshot, compares it against historical records, and generates a delta file containing state changes. Once complete, a completion signal flag is written to instruct downstream processes, preventing race conditions and ensuring zero data loss during re-runs.
+3. **State Management & Downtime Analytics:** Secondary Power Automate workflows poll the completion signal, read delta metrics, update dynamic Microsoft Lists repositories automatically, and calculate active offline durations on an hourly schedule.
+
+####Phase 2: Infrastructure Topology & Geospatial Mapping Engine
+To eliminate documentation gaps, a dual-list database architecture was designed in SharePoint Online:
+1. **Camera Asset Repository:** Catalogs individual camera states, IP addresses, parent pole associations, operational notes, and resolution statuses.
+2. **Network Infrastructure Repository:** Maps core and edge distribution switches, hierarchical parent-child switch dependencies, hardware models, UPS associations, and precise geographic coordinates (Latitude/Longitude).
+3. **Interactive Geospatial Web Application:** Developed a responsive, interactive mapping portal utilizing MapLibre GL JS layered over high-resolution satellite imagery. The dashboard features:
+   - **Real-Time Status Badges:** Dynamic, color-coded map markers reflecting online, warning, maintenance, or offline camera counts per pole/location.
+   - **Interactive Topology Path Highlighting:** Custom tree-walking algorithms that visually trace and highlight upstream and downstream network links upon selecting any site.
+   - **Detailed Asset Inspection Drawers:** Contextual popups exposing switch hardware details, IP addresses, UPS operational states, and connection media types (Fiber, Copper, Wireless links).
+
+###Project Results (Impact)
+- **Eliminated Operational Waste:** Automated the daily camera status verification workflow, replacing a multi-hour manual log comparison process with an instant, zero-touch background pipeline.
+- **Actionable Visual Intelligence:** Empowered technical support staff to instantly pinpoint offline devices, trace network dependency chains across large industrial sites, and identify exact switch/pole locations on an interactive map.
+- **Accelerated Incident Remediation:** Provided field technicians with immediate clarity on upstream power and network dependencies, drastically reducing Mean Time to Resolution (MTTR) for critical physical security infrastructure.
